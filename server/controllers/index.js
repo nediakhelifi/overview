@@ -36,10 +36,10 @@ const readStyles =async (req,res) => {
     }
 }
 
-const readRelated =async (req,res) => {
-    let id = req.params.id
+const readReviews =async (req,res) => {
+    const id = req.params.id
     try {
-        let response =await axios.get("/products/"+id+"/related")
+        let response =await axios.get(`/reviews?product_id=${id}`)
         console.log(response.data)
         res.send(response.data)
     } catch (error) {
@@ -49,4 +49,4 @@ const readRelated =async (req,res) => {
 }
 
 
-module.exports = { read ,readById,readStyles,readRelated};
+module.exports = { read ,readById,readStyles,readReviews};

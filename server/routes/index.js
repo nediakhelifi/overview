@@ -5,7 +5,7 @@ var controllers= require('../controllers')
 router.get('/',controllers.read)
 router.get('/:id',controllers.readById)
 router.get('/:id/styles',controllers.readStyles)
-router.get('/:id/related',controllers.readRelated)
+router.get('/reviews/:id',controllers.readReviews)
 
 
 

@@ -10,6 +10,9 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 
 app.use("/api", api);
+app.use("*",(req, res) => {
+  res.sendFile(path.join(__dirname, "../public", "index.html"))
+})
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
 });
